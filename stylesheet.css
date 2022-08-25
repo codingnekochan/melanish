@@ -1,0 +1,385 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+/* GENERAL SYLES */
+.body{
+    width: 100%;
+    min-height: 100vh;
+    position:relative;
+}
+a{
+    text-decoration:none;
+    display: block;
+}
+.header--navigation,
+.main-container,
+.footer-navigation,
+.contact-card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.header--navigation__link,
+.footer-navigation__link,
+.footer-navigation__date,
+.contact-card--email,
+.contact-card--details{
+    font-family: Outfit, sans-serif;
+    font-weight: 500;
+
+}
+.photographer-card--title,
+.contact-card--title,
+.about-heading,
+.director--name{
+    font-family: 'EB Garamond',sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: hsla(0, 0%, 100%, 1);
+}
+.photographer-card--title,
+.contact-card--title{
+    font-size: 15.4rem;
+    line-height: 18.1rem;   
+    
+}
+/* navigation menu ON HOME AND FORMATartiste(about) pages */
+.header--navigation{
+    justify-content: space-around;
+    margin: 5.3rem 0 12rem;
+}
+.header--navigation__link,
+.footer-navigation__link,
+.footer-navigation__date{
+    color:hsla(0, 0%, 95%, 1);    
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+}
+/* HOME PAGE */
+.home{
+    background:linear-gradient(180deg,hsla(0, 95%, 8%, 1), hsla(0, 0%, 0%, 1));
+
+}
+.main-container{
+    gap:10rem;
+    padding: 0 10rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-bottom: 14rem;  
+}
+.main-container::-webkit-scrollbar{
+    display: none;
+
+}
+/* photographer card */
+.photographer-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 41.1rem;
+    height: 57.1rem; 
+    animation-name: auto-scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+.photographer-card--image{
+    object-fit:contain;
+    width: 41.1rem;
+    height: 51.8rem;
+    animation-name:card-transform;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+.photographer-card--title{
+    position: absolute;
+    top:42rem;
+}
+
+/* effects */
+@keyframes auto-scroll{
+    0%{
+        transform: translateX(0);
+    }
+    6.25%{
+        transform: translateX(-360px);
+    }
+    12.5%{
+        transform: translate(-720px);
+    }
+    25%{
+        transform: translateX(-1080px);
+    }
+    37.5%{
+        transform:translateX(-1440px);
+    }
+    50%{
+        transform:translateX(-1800px);
+    }
+    62.5%{
+        transform: translateX(-2160px);
+    }
+    75%{
+        transform: translateX(-2520px)
+    }
+    87.5%{
+        transform: translateX(-2880px);
+    }
+    100%{
+        transform: translateX(-3240px);
+    }
+}
+@keyframes card-transform{
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0.5;
+    }
+    50%{
+        transform: perspective(600px) rotateY(60deg);
+        opacity: 0.25;
+    }
+    75%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* footer section */
+.footer-navigation{
+    justify-content: space-between;
+}
+
+/* CONTACT PAGE */
+.contact{
+    background: hsla(0, 100%, 5%, 1);
+}
+.contact-card{
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-card--email{
+    color:hsla(0, 0%, 95%, 0.7);
+    font-size: 5rem;
+    line-height: 6rem;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    margin-top: 6.3rem;
+}
+.contact-card--line{
+    width: 33rem;
+    height:.1rem;
+    background-color: hsla(0, 0%, 100%, 0.41);
+    margin-top: 6.1rem;
+}
+.contact-card--details{
+    margin-top: 5.8rem;
+    color:hsla(0, 0%, 100%, 1);
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+/* FORMATartiste page */
+/* general styling */
+.about{
+    background: hsla(0, 0%, 1%, 1);
+}
+.image{
+    max-width: 100%;
+    height: auto;
+}
+/* header block */
+.about .header--navigation{
+    padding-bottom: 25rem;
+}
+/* page sub-header */
+.project-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.project-header--title{
+    font-size: 22rem;
+    line-height: 25.9rem;
+    position: absolute;
+    top:23rem;
+}
+/* team information */
+.project-team--info{
+    margin: 9.3rem 0 27.4rem;
+    padding: 0 42rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.director--role{
+    color:hsla(15, 9%, 82%, 1);
+    font-family: Outfit, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+    text-align: center;  
+}
+.director--name{
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+}
+/* background texts */
+/* general */
+.page-background,
+.main-editorial .image{
+    position: relative;
+}
+.background-text{
+font-family: 'EB Garamond';
+font-size: 260px;
+font-weight: 400;
+line-height: 306px;
+letter-spacing: 0em;
+text-align: center;
+}
+.page-background{
+    z-index:-1;
+}
+/* first background text */
+.page-background--first{
+    top: 9.2rem;
+}
+.background-text--fade{
+    color:hsla(0, 0%, 55%, 1);
+}
+/* second background text */
+.page-background--second{
+    bottom: 86.4rem;
+
+}
+.background-text--transparent{
+    color: inherit;
+    text-shadow: 2px 2px 0 hsla(0, 0%, 55%, 1),
+                 -2px -2px 0 hsla(0, 0%, 55%, 1),
+                 2px -2px 0 hsla(0, 0%, 55%, 1),
+                 -2px 2px 0 hsla(0, 0%, 55%, 1);
+    
+}
+.background-text--solid{
+    color:hsla(0, 0%, 100%, 1);
+}
+/* photographs */
+/* main editorial */
+
+.main-editorial .one{
+    left:8.7rem;
+    margin-bottom: 20rem;  
+}
+.main-editorial .two{
+    left:32.6rem;
+    margin-bottom: 19.1rem;
+}
+.main-editorial .three{
+    left:8.7rem;
+    margin-bottom: 27rem;
+}
+.main-editorial .four{
+    left: 77.7rem;
+}
+.main-editorial .five{
+    top:54rem;
+    left:-47.1rem;
+}
+.main-editorial .six{
+    left:70.7rem;
+    margin: 30.6rem 0 53.5rem ;
+}
+/* slide editorial */
+.pictures--slide{
+    width:100%;
+    height: 90rem;
+    display: flex;
+    align-items: center;
+    gap:36rem;
+    padding: 0 40.3rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.pictures--slide::-webkit-scrollbar{
+    display: none;
+}
+.pictures--slide .image{
+ object-fit: contain;
+}
+.slide-editorial{
+   min-width: 540px;
+   max-height: 833.11px;
+}
+.slide-editorial .seven{
+    transform: rotate(6.85deg);
+}
+.slide-editorial .eight{
+    transform: rotate(-3deg);
+}
+.slide-editorial .nine{
+    transform: rotate(9.85deg);
+}
+/* footer container */
+.about .footer-container{
+    height: 975px;
+    background:hsla(0, 0%, 5%, 0.92);
+    position: relative;
+}
+.next-project--title{
+    position: absolute;
+    top:40rem;
+    font-size: 15.4rem;
+    line-height: 18.1rem;
+    z-index: 3;
+    left: 31rem;
+}
+.next-project--images{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer--image{
+    position: relative;
+}
+.next-project--images .ten{
+    opacity: 0.4;
+    transform: rotate(6.92deg);
+    left:21.6rem;
+    bottom:6rem;
+}
+.next-project--images .eleven{
+    transform: rotate(-4.05deg);
+    z-index: 2;
+}   
+.next-project--images .twelve{
+    opacity: 0.25;
+    transform: rotate(-8.2deg);
+    right:24.5rem;
+    top:7.7rem;
+}
+
+
+    
